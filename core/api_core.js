@@ -71,7 +71,7 @@ core.prototype = {
 
     if(this.appendBodyData(type)) {
       url = this.requestUrlFormatter.getUrl(path, true);
-      data = this.requestUrlFormatter.createParamString(this.urlFormmater.params);
+      data = this.requestUrlFormatter.createParamString(this.requestUrlFormatter.params);
     }
     else{
       url = this.requestUrlFormatter.getUrl(path, false);
