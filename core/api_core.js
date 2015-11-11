@@ -72,6 +72,7 @@ core.prototype = {
     if(this.appendBodyData(type)) {
       url = this.requestUrlFormatter.getUrl(path, true);
       data = this.requestUrlFormatter.createParamString(this.requestUrlFormatter.params);
+      this.addContentTypeHeader(options);
     }
     else{
       url = this.requestUrlFormatter.getUrl(path, false);
@@ -111,6 +112,10 @@ core.prototype = {
   appendBodyData: function(type) {
     var body = ['POST', 'PUT', 'PATCH'];
     return body.indexOf(type) !== -1;
+  },
+
+  addContentTypeHeader: function(options) {
+    options.headers['Content-Type'] = 'application/x-www-form-urlencoded';
   },
 
   addAuthorizationHeader: function(options) {
