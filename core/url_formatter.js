@@ -137,6 +137,10 @@ formatter.prototype = {
     }
 
     return false;
+  },
+
+  createParamString: function() {
+    return qs.stringify(this.params);
   }
 };
 
